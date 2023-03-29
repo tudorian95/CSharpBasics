@@ -10,7 +10,7 @@ void divisible()
 {
     Console.WriteLine("Pick a number, let's see if it's divisible by both 7 and 11");
     int a = int.Parse(Console.ReadLine());
-    if (a % 7 == 0 && a%11 == 0)
+    if (a % 7 == 0 && a % 11 == 0)
     {
         Console.WriteLine("The number you have chosen is divisible by both 7 and 11");
     }
@@ -19,7 +19,7 @@ void divisible()
 
 //divisible();
 //LeapYear();
-PrimeSum(5);
+PrimeAtGivenPosition(46);
 //2. Check whether a given year is leap year or not.
 /*
 1 If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
@@ -35,9 +35,9 @@ void LeapYear()
     int a = int.Parse(Console.ReadLine());
     if (a % 4 == 0)
     {
-        if (a % 100 == 0) 
-        { 
-            if (a % 400 == 0) 
+        if (a % 100 == 0)
+        {
+            if (a % 400 == 0)
             {
                 Console.WriteLine("leap year");
                 return;
@@ -65,17 +65,22 @@ bool isPrime(int number)
     return true;
 
 }
-void PrimeSum(int target)
+void PrimeAtGivenPosition(int position)
 {
     int count = 0;
-    for (int i = 0; i < 1000; i++)
+
+    int i = 0;
+
+    while (count <= position)
     {
         if (isPrime(i))
         {
-         count++;
-         if (count == target)
-         Console.WriteLine(i);
+            count++;
+            if (count == position)
+                Console.WriteLine(i);
         }
+        i++;
     }
+    Console.ReadLine();
 }
-   
+
